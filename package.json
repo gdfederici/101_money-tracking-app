@@ -1,0 +1,24 @@
+{
+  "name": "moneytrackingapp",
+  "version": "0.1.0",
+  "description": "A budget app to manage own money",
+  "main": "src/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdfederici/101_money-tracking-app.git"
+  },
+  "keywords": [
+    "budget",
+    "app",
+    "money"
+  ],
+  "author": "GDFederici",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/gdfederici/101_money-tracking-app/issues"
+  },
+  "homepage": "https://github.com/gdfederici/101_money-tracking-app#readme"
+}
