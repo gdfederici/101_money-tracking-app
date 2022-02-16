@@ -4,10 +4,10 @@
         wallet.addOperation(op)
     }
     context.removeOperation = function(id) {
-        return wallet.removeOperation(id);
+        wallet.removeOperation(id);
     }
-    context.findOperation = function() {
-
+    context.findOperation = function(val) {
+        return wallet.findOperation(val);
     }
     context.getBalance = function() {
         return wallet.getBalance();
