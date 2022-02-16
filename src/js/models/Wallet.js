@@ -3,7 +3,8 @@ var OpType = {
     IN: 'IN'
 }
 var WalletErrors = {
-    INVALID_OPERATION: 'INVALID_OPERATION'
+    INVALID_OPERATION: 'INVALID_OPERATION',
+    OPERATION_NON_FOUND: 'OPERATION_NON_FOUND'
 }
 
 function getWallet() {
@@ -51,8 +52,25 @@ function Wallet() {
         operations.push(operation);
         saveWallet();
     }
-    this.removeOperation = function() {
-    
+    this.removeOperation = function(id) {
+        var operationIndex;
+        for(var i = 0; i < operations.length; i++) {
+            if(operations[i].date === id) {
+                operationIndex = i;
+                break;
+            }
+        }
+        if(typeof operationIndex === 'undefined') {
+            throw new Error(WalletErrors.OPERATION_NON_FOUND);
+        }
+        var operation = operations[operationIndex];
+        if(operation.type === OpType.IN) {
+            balance -= operation.amount;
+        } else if(operation.type === OpType.OUT) {
+            balance += operation.amount;
+        }
+        operations.splice(operationIndex, 1);
+        saveWallet();
     }
     this.findOperation = function() {
     
