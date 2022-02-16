@@ -1,7 +1,7 @@
 (function() {
     var wallet;
-    function addOperation() {
-
+    function addOperation(op) {
+        wallet.addOperation(op)
     }
     function removeOperation() {
 
@@ -12,7 +12,7 @@
     function getBalance() {
         return wallet.getBalance();
     }
-    function getOperation() {
+    function getOperations() {
         return wallet.getOperations();
     }
 
