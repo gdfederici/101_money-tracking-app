@@ -1,3 +1,5 @@
+const utilsTasks = require("../utils");
+
 const OpType = Object.freeze({
     OUT: 'OUT',
     IN: 'IN'
@@ -12,7 +14,7 @@ function Wallet() {
     let operations = [];
 
     function init() {
-        const wallet = getWallet();
+        const wallet = utilsTasks.getWallet();
         balance = wallet.balance;
         operations = wallet.operations; 
     }
@@ -21,7 +23,7 @@ function Wallet() {
     }
 
     this.addOperation = function(op) {
-        if(!isValidOperation(op)) {
+        if(!utilsTasks.isValidOperation(op)) {
             throw new Error(WalletErrors.INVALID_OPERATION);
         }
         const operation = {
@@ -73,4 +75,9 @@ function Wallet() {
         return operations;
     }
     init();
+}
+
+module.exports = {
+    Wallet: Wallet,
+    WalletErrors: WalletErrors
 }
