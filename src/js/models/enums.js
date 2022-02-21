@@ -4,7 +4,7 @@ const OpType = Object.freeze({
 });
 const WalletErrors = Object.freeze({
     INVALID_OPERATION: 'INVALID_OPERATION',
-    OPERATION_NON_FOUND: 'OPERATION_NON_FOUND'
+    OPERATION_NOT_FOUND: 'OPERATION_NOT_FOUND'
 });
 
 module.exports = {
