@@ -3,11 +3,11 @@ const Wallet = require("./models/Wallet");
 
 describe("Utils testing suite", function() {
 
-    /*beforeEach(function() {
+    beforeEach(function() {
         localStorage.removeItem("wallet");
-    });*/
+    });
     it("findIndex returns corret index", function() {
-        const list = [1,2,3,4];
+        const list = [1, 2, 3, 4];
         const index = utils.findIndex(list, function(item) {
             return item === 3;
         });
@@ -22,7 +22,7 @@ describe("Utils testing suite", function() {
     });
     it("isValidOperation returns true if operation is valid", function() {
         const operation = {
-            desctiption: "Salary",
+            description: "Salary",
             amount: 1000,
             type: Wallet.OpType.IN
         }
@@ -30,7 +30,7 @@ describe("Utils testing suite", function() {
     });
     it("isValidOperation returns false if operation is not valid", function() {
         const operation = {
-            desctiption: "Salary",
+            description: "Salary",
             amount: 0,
             type: Wallet.OpType.IN
         }
@@ -38,7 +38,7 @@ describe("Utils testing suite", function() {
     });
     it("getWallet returns correct wallet if it exists in the local storage", function() {
         const operation = {
-            desctiption: "Salary",
+            description: "Salary",
             amount: 1000,
             type: Wallet.OpType.IN
         }
